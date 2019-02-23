@@ -5,32 +5,77 @@
     tools:context="com.starfriend.starfriend.RegisterFragment">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <!--Toolbar-->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarRegister"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+        <!--Toolbar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarRegister"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
         <!--Content-->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-          <LinearLayout
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Avata-->
+                <ImageView
+                    android:id="@+id/imvAvata"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="30dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/avata" />
+
+
+                <!--Name-->
+                <EditText
+                    android:id="@+id/edtname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:hint="Name"
+                    android:inputType="text" />
+
+                <!--User-->
+                <EditText
+                    android:id="@+id/edtuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:hint="User"
+                    android:inputType="text" />
+
+
+                <!--Password-->
+                <EditText
+                    android:id="@+id/edtpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:hint="Password"
+                    android:inputType="text" />
+
+            </LinearLayout>
 
 
         </ScrollView>
 
-
+    </LinearLayout>
 
 
 </FrameLayout>
