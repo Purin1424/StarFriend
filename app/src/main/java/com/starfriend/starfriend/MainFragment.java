@@ -5,6 +5,7 @@ import android.arch.lifecycle.ReportFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
@@ -38,6 +39,30 @@ public class MainFragment extends Fragment {
 
     private void loginController() {
         Button button = getView().findViewById(R.id.btnlogin);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText userEditText = getView().findViewById(R.id.edtuser);
+                EditText passwordEditor = getView().findViewById(R.id.edtpassword);
+
+                String user = userEditText.getText().toString().trim();
+                String password = passwordEditor.getText().toString().trim();
+
+                MyAlert myAlert = new MyAlert(getActivity());
+                if (user.isEmpty() || password.isEmpty()) {
+                    myAlert.normalDialoh("Have Space", "Please Foll all Bank");
+                } else {
+                    try {
+                        GetUserWhereUserThread getUserWhereUserThread = new GetUserWhereUserThread(getActivity());
+                        getUserWhereUserThread.execute(user);
+                        String json = getUserWhereUserThread.get();
+                        Log.d("24FebV1", "json ==>" + json);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     private void registerController() {
